@@ -1,0 +1,39 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { MoveDown } from "lucide-react";
+import WorkCard from "@/components/reusable/work-card";
+import { works } from "@/data/works";
+export const Route = createFileRoute("/_shared/")({ component: Home });
+
+function Home() {
+	return (
+		<div className="max-w-340 mx-auto py-20 flex flex-col gap-24">
+      <div className='absolute -top-6 left-0 w-screen h-screen bg-radial from-cyan-300 brightness-25 blur-3xl via-dark to-white/0'></div>
+			<div className='h-[80vh] flex flex-col justify-center gap-30 z-10'>
+        <div className="flex flex-col">
+          <div className="text-8xl font-semibold">
+            <h1 className="font-moz">I design idea</h1>
+            <h1 className="h-24">
+              product &{" "}
+              <span className="font-cycle bg-clip-text text-transparent bg-linear-to-r from-white to-slate-400">
+                result
+              </span>
+              .
+            </h1>
+          </div>
+          <div className="text-4xl flex flex-col items-end mt-14 gap-2">
+            <p>Middle Software Engineer at Avasure. Remote working.</p>
+            <p className="text-dark-200">Formerly as Freelance Web Developer</p>
+          </div>
+        </div>
+        <div className="flex justify-center w-full translate-y-20">
+          <div>
+            <MoveDown className='animate-bounce size-9' />
+          </div>
+        </div>
+      </div>
+			{works.map((i) => (
+				<WorkCard key={i.imageAlt} {...i} />
+			))}
+		</div>
+	);
+}
