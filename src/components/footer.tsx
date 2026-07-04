@@ -1,9 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { MoveUpRight } from "lucide-react";
-import { githubUrl, linkedInUrl, telegramUrl } from "@/data/contacts";
+import {
+	githubUrl,
+	linkedInUrl,
+	resumeUrl,
+	telegramUrl,
+} from "@/data/contacts";
 export default function Footer() {
 	return (
-		<footer className="border-t border-t-neutral-800 h-fit flex justify-center p-24" id="#contacts">
+		<footer
+			className="border-t border-t-neutral-800 h-fit flex justify-center p-24"
+			id="#contacts"
+		>
 			<div className="grid grid-cols-2 min-w-360">
 				<div className="flex flex-col gap-4">
 					<p className="uppercase font-semibold text-sm text-dark-200">
@@ -33,7 +41,7 @@ export default function Footer() {
 						</Link>
 						<Link
 							target="_blank"
-							to={linkedInUrl}
+							to={resumeUrl}
 							className="transition-all duration-100 hover:text-cyan-600 flex justify-between"
 						>
 							Resume <MoveUpRight />
@@ -50,7 +58,7 @@ export default function Footer() {
 				</div>
 				<div className="flex flex-col items-end justify-end gap-2">
 					<p className="text-semibold text-2xl">Thanks for stopping by!</p>
-					<p className='text-6xl'>❤️</p>
+					<p className="text-6xl">❤️</p>
 					{/* <img
 						alt="sign"
 						src="https://cdn.prod.website-files.com/63dcb6e1a80e9454b630f4c4/644c0b97a6f9b7a26c1d28e9_perry-signature-p-500.png"

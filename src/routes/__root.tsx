@@ -57,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<HeadContent />
 				<title>Stas.T Software Engineer</title>
 			</head>
-			<body className="bg-dark text-light relative overflow-x-hidden">
+			<body className="bg-dark text-light relative overflow-x-hidden dark">
 				{/* <Header />
 				<main className="min-h-screen">{children}</main>
 				<Footer /> */}

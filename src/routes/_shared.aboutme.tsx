@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import Dyploma1 from "@/assets/dyplomas/d1.webp";
 import Dyploma2 from "@/assets/dyplomas/d2.webp";
 import Dyploma3 from "@/assets/dyplomas/d3.webp";
@@ -9,18 +9,22 @@ import Me1 from "@/assets/me/me1.webp";
 import Me2 from "@/assets/me/me2.webp";
 import Me3 from "@/assets/me/me3.webp";
 import { Card } from "@/components/reusable/card";
+import ZoomDialog from "@/components/reusable/dialog/dialog";
 import ExperienceCard from "@/components/reusable/experience-card";
 import SectionHeader from "@/components/reusable/section-header";
 import { SkillBlock } from "@/components/reusable/skill-block";
+import { resumeDownloadUrl, resumeUrl } from "@/data/contacts";
 import { experiences } from "@/data/experience";
 import { skillsData } from "@/data/stack";
 import { studies } from "@/data/study";
+import { useDialogStore } from "@/hooks/use-dialog.hook";
 
 export const Route = createFileRoute("/_shared/aboutme")({
 	component: AboutMe,
 });
 
 function AboutMe() {
+	const { openDialog } = useDialogStore();
 	return (
 		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24">
 			<div className="absolute -top-6 left-0 w-screen h-screen bg-radial from-emerald-300 brightness-25 blur-3xl via-dark to-white/0"></div>
@@ -70,23 +74,46 @@ function AboutMe() {
 			<section className="flex flex-col gap-5">
 				<SectionHeader>Summary</SectionHeader>
 				<p className="text-lg text-dark-200 font-medium tracking-normal">
-					Results-driven Middle Full Stack Software Engineer with over 4 years
-					of experience architecting, developing, and deploying highly scalable
-					enterprise applications and web solutions. Proficient in the .NET
-					ecosystem, Node.js (NestJS), and modern frontend frameworks including
-					React and Next.js. Demonstrated success in leading engineering teams,
-					delivering high-traffic e-commerce platforms, and orchestrating
-					fault-tolerant microservices. Adept at creating seamless, minimalist
-					user experiences with a focus on clean, maintainable code and agile
-					methodologies. Seeking a remote position to leverage deep full-stack
-					expertise to drive innovative engineering solutions.
+					Results-driven Middle Full Stack Web Developer with over 5 years of
+					experience architecting, developing, software engineering and
+					deploying highly scalable enterprise applications and web solutions.
+				</p>
+				<p className="text-lg text-dark-200 font-medium tracking-normal">
+					Proficient in the .NET ecosystem, Node.js (NestJS), and modern
+					frontend frameworks including React and Next.js. Demonstrated success
+					in leading engineering teams, delivering high-traffic e-commerce
+					platforms, and orchestrating fault-tolerant microservices.
+				</p>
+				<p className="text-lg text-dark-200 font-medium tracking-normal">
+					Adept at creating seamless, minimalist user experiences with a focus
+					on clean, maintainable code and agile methodologies. Seeking a remote
+					position to leverage deep full-stack expertise to drive innovative
+					engineering solutions.
 				</p>
 				<br />
-				<div className='rounded-[48px] bg-dark-300 relative grid grid-cols-3 py-10 px-20 border-x border-b border-x-white/10 border-b-white/10 shadow-2xl shadow-white/5'>
-					<div className='h-px w-full absolute top-0 left-0 bg-linear-to-r from-dark via-cyan-300/80 to-dark'></div>
-					<div className='col-span-2'>
-						<h1 className='font-semibold text-4xl'>Resume</h1>
-						<p className='text-dark-200 text-xl mt-2'>Review my CV or download it to save.</p>
+				<div className="rounded-[48px] bg-dark-300 relative grid grid-cols-3 py-10 px-20 border-x border-b border-x-white/10 border-b-white/10 shadow-2xl shadow-white/5">
+					<div className="h-px w-full absolute top-0 left-0 bg-linear-to-r from-dark via-cyan-300/80 to-dark"></div>
+					<div className="col-span-2">
+						<h1 className="font-semibold text-4xl">Resume</h1>
+						<p className="text-dark-200 text-xl mt-2">
+							Review my CV or download it to save.
+						</p>
+					</div>
+					<div className="flex items-center justify-center gap-1">
+						<Link
+							to={resumeUrl}
+							target="_blank"
+							className="bg-blue-600 rounded-l-xl px-5 py-2 text-xl font-medium cursor-pointer"
+						>
+							Review
+						</Link>
+						<Link
+							to={resumeDownloadUrl}
+							target="_blank"
+							className="bg-blue-600 rounded-r-xl px-5 py-2 text-xl font-medium cursor-pointer"
+						>
+							Download
+						</Link>
 					</div>
 				</div>
 			</section>
@@ -97,6 +124,10 @@ function AboutMe() {
 					{skillsData.map((i) => (
 						<SkillBlock key={i.title} {...i} />
 					))}
+					<p className="text-lg text-dark-200 font-medium tracking-normal col-span-full">
+						* Most showcases were made with Nodejs. Current stack - Next.js,
+						Vite, Nest.js.
+					</p>
 				</div>
 			</section>
 			<hr className="border-white/30" />
@@ -116,19 +147,92 @@ function AboutMe() {
 			<hr className="border-white/30" />
 			<section className="flex flex-col gap-18">
 				<SectionHeader>Dyplomas</SectionHeader>
-				<div className='grid grid-cols-2 gap-10 *:gap-10'>
-					<div className='flex flex-col items-end'>
-						<Card><img src={Dyploma1} alt='dyploma1'  /></Card>
-						<Card><img src={Dyploma5} alt='dyploma5' /></Card>
-						<Card><img src={Dyploma3} alt='dyploma3' /></Card>
+				<div className="grid grid-cols-2 gap-10 *:gap-10">
+					<div className="flex flex-col items-end">
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma1}
+										alt="dyploma1"
+										className="w-200 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma1} alt="dyploma1" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma5}
+										alt="dyploma5"
+										className="w-130 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma5} alt="dyploma5" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma3}
+										alt="dyploma3"
+										className="w-130 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma3} alt="dyploma3" />
+						</Card>
 					</div>
-					<div className='flex flex-col items-start'>
-						<Card><img src={Dyploma2} alt='dyploma2' /></Card>
-						<Card><img src={Dyploma6} alt='dyploma6' /></Card>
-						<Card><img src={Dyploma4} alt='dyploma4' /></Card>
+					<div className="flex flex-col items-start">
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma2}
+										alt="dyploma2"
+										className="w-130 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma2} alt="dyploma2" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma6}
+										alt="dyploma6"
+										className="w-160 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma6} alt="dyploma6" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={Dyploma4}
+										alt="dyploma4"
+										className="w-130 h-full object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={Dyploma4} alt="dyploma4" />
+						</Card>
 					</div>
 				</div>
 			</section>
+			<ZoomDialog />
 		</div>
 	);
 }

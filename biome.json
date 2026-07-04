@@ -30,7 +30,8 @@
 				"noSvgWithoutTitle": "off",
 				"useValidAnchor": "off",
 				"useHeadingContent": "off",
-				"useKeyWithClickEvents": "off"
+				"useKeyWithClickEvents": "off",
+				"useButtonType": "off",
 			}
 		}
 	},

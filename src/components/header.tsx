@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { MoveUpRight } from "lucide-react";
-import { linkedInUrl } from "@/data/contacts";
+import { linkedInUrl, resumeUrl } from "@/data/contacts";
 import HeaderNav from "./header_navbar";
 
 export default function Header() {
@@ -10,6 +10,7 @@ export default function Header() {
 			<div className="">
 				<h1 className="text-2xl font-semibold">Stanislav T.</h1>
 				<p className="text-sm text-dark-200 font-medium">Software Engineer</p>
+				<p className="text-sm text-dark-200 font-medium">Web Developer</p>
 			</div>
 			<HeaderNav />
 			<nav className="flex gap-5 items-center">
@@ -22,7 +23,7 @@ export default function Header() {
 				</Link>
 				<Link
 					target="_blank"
-					to={linkedInUrl}
+					to={resumeUrl}
 					className="transition-all duration-100 hover:text-cyan-600 flex items-center font-medium"
 				>
 					Resume <MoveUpRight className="size-5" />
