@@ -73,13 +73,15 @@ export default function WorkCard({
 			style={{ "--accent": accentColor } as React.CSSProperties}
 			className={cn(
 				"relative group block rounded-[48px] border border-white/5 p-3 focus-visible:outline-cyan-400",
-				isAi ? "bg-linear-to-br from-cyan-300/15 via-emerald-300/15 to-purple-300/15 shadow-2xl shadow-cyan-400/15" : "bg-dark-300",
+				isAi
+					? "bg-linear-to-br from-cyan-300/15 via-emerald-300/15 to-purple-300/15 shadow-2xl shadow-cyan-400/15"
+					: "bg-dark-300",
 			)}
 		>
-			<div className="w-full h-px absolute top-0 left-0 bg-linear-to-r from-white/0 via-white/80 to-white/0" />		
-			<div className="relative overflow-hidden rounded-[36px] border border-white/30 border-b-white/20 transition-colors duration-300 ease-out bg-radial-[at_50%_0%] from-white/10 group-hover:from-(--accent)/50 group-hover:to-white/0 to-100% p-11 pb-0 group-hover:border-white/50">
+			<div className="w-1/2 h-px absolute top-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-white/0 via-white/80 to-white/0" />
+			<div className="relative overflow-hidden rounded-[36px] border border-white/30 border-b-white/20 transition-colors duration-300 ease-out bg-radial-[at_50%_0%] from-white/10 group-hover:from-(--accent)/50 group-hover:to-white/0 to-100% p-11 pb-0 group-hover:border-white/50 max-sm:p-6 max-lg:p-8">
 				<div className="w-full h-px absolute top-0 left-0 bg-linear-to-r from-white/0 via-white/40 to-white/0" />
-				<div className='absolute top-0 left-0 bg-dark-300 size-full rounded-[36px] -z-10'></div>
+				<div className="absolute top-0 left-0 bg-dark-300 size-full rounded-[36px] -z-10"></div>
 				<MoveUpRight
 					className="
                   absolute right-6 top-6 size-9 text-white/70
@@ -88,13 +90,15 @@ export default function WorkCard({
 					strokeWidth={1.75}
 				/>
 				<div className="pr-10">
-					<h3 className="text-[32px] font-semibold text-white">{title}</h3>
-					<p className="mt-2 text-white/60 text-lg">
+					<h3 className="text-[32px] font-semibold text-white max-sm:text-xl">
+						{title}
+					</h3>
+					<p className="mt-2 text-white/60 text-lg max-sm:text-base">
 						<span className="font-medium text-white/80">{client}</span>
 						{description ? <span> — {description}</span> : null}
 					</p>
 				</div>
-				<div className="mt-12 mx-10 overflow-hidden rounded-t-xl transition-transform duration-500 group-hover:translate-y-0 translate-y-6">
+				<div className="mt-12 mx-10 overflow-hidden rounded-t-xl transition-transform duration-500 group-hover:translate-y-0 translate-y-6 max-xl:group-hover:translate-y-6 max-xl:mx-0">
 					<img
 						src={image}
 						alt={imageAlt || title}

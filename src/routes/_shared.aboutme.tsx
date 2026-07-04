@@ -26,7 +26,7 @@ export const Route = createFileRoute("/_shared/aboutme")({
 function AboutMe() {
 	const { openDialog } = useDialogStore();
 	return (
-		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24">
+		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24 max-sm:pt-0 max-md:px-5 max-2xl:px-10 max-lg:gap-16">
 			<div className="absolute -top-6 left-0 w-screen h-screen bg-radial from-emerald-300 brightness-25 blur-3xl via-dark to-white/0"></div>
 			<div className="h-[80vh] flex flex-col justify-center gap-30 z-10">
 				<div className="flex flex-col items-center *:text-center">
@@ -36,25 +36,25 @@ function AboutMe() {
 							src={Me2}
 							width={176}
 							height={176}
-							className="size-44 rounded-full bg-white/10 object-cover outline outline-white/30 -rotate-12 translate-x-10 translate-y-5"
+							className="size-44 rounded-full bg-white/10 object-cover -rotate-12 translate-x-10 translate-y-5 max-sm:size-32 max-xs:size-28"
 						/>
 						<img
 							alt="me2"
 							src={Me1}
 							width={176}
 							height={176}
-							className="size-44 rounded-full bg-white/10 object-cover outline outline-white/30 z-10"
+							className="size-50 rounded-full bg-white/10 object-cover z-10 max-sm:size-36 max-xs:size-32"
 						/>
 						<img
 							alt="me3"
 							src={Me3}
 							width={176}
 							height={176}
-							className="size-44 rounded-full bg-white/10 object-cover outline outline-white/30 rotate-16 -translate-x-10 translate-y-5"
+							className="size-40 rounded-full bg-white/10 object-cover rotate-16 -translate-x-10 translate-y-5 max-sm:size-34 max-xs:size-24"
 						/>
 					</div>
-					<div className="text-8xl font-semibold mt-14">
-						<h1 className="font-moz ">Wanna know more</h1>
+					<div className="text-8xl font-semibold mt-14 max-sm:text-6xl">
+						<h1 className="font-moz">Wanna know more</h1>
 						<h1 className="h-24">
 							about{" "}
 							<span className="font-cycle bg-clip-text text-transparent bg-linear-to-r from-white to-slate-400">
@@ -62,7 +62,7 @@ function AboutMe() {
 							</span>
 						</h1>
 					</div>
-					<div className="text-4xl flex flex-col items-start mt-14 gap-2">
+					<div className="text-4xl flex flex-col items-center mt-14 gap-2">
 						<p>Scroll down to see</p>
 						<p className="text-dark-200">
 							Stack, Skills, Experience, Education
@@ -71,7 +71,7 @@ function AboutMe() {
 				</div>
 			</div>
 			<hr className="border-white/30" />
-			<section className="flex flex-col gap-5">
+			<section className="flex flex-col gap-5 text-justify">
 				<SectionHeader>Summary</SectionHeader>
 				<p className="text-lg text-dark-200 font-medium tracking-normal">
 					Results-driven Middle Full Stack Web Developer with over 5 years of
@@ -91,15 +91,15 @@ function AboutMe() {
 					engineering solutions.
 				</p>
 				<br />
-				<div className="rounded-[48px] bg-dark-300 relative grid grid-cols-3 py-10 px-20 border-x border-b border-x-white/10 border-b-white/10 shadow-2xl shadow-white/5">
-					<div className="h-px w-full absolute top-0 left-0 bg-linear-to-r from-dark via-cyan-300/80 to-dark"></div>
-					<div className="col-span-2">
+				<div className="rounded-[48px] bg-dark-300 relative grid grid-cols-3 py-10 px-20 gap-10 border-x border-b border-x-white/10 border-b-white/10 shadow-2xl shadow-white/5 max-sm:grid-cols-1 max-xl:grid-cols-2 max-lg:px-8">
+					<div className="h-px w-1/2 absolute top-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-dark via-cyan-300/80 to-dark"></div>
+					<div className="col-span-2 max-xl:col-span-1">
 						<h1 className="font-semibold text-4xl">Resume</h1>
-						<p className="text-dark-200 text-xl mt-2">
+						<p className="text-dark-200 text-xl mt-2 max-lg:text-start">
 							Review my CV or download it to save.
 						</p>
 					</div>
-					<div className="flex items-center justify-center gap-1">
+					<div className="flex items-center justify-end gap-1">
 						<Link
 							to={resumeUrl}
 							target="_blank"
@@ -120,7 +120,7 @@ function AboutMe() {
 			<hr className="border-white/30" />
 			<section className="flex flex-col gap-18">
 				<SectionHeader>Stack & Skills</SectionHeader>
-				<div className="grid grid-cols-2 gap-x-20 gap-y-10">
+				<div className="grid grid-cols-2 gap-x-20 gap-y-10 max-lg:grid-cols-1">
 					{skillsData.map((i) => (
 						<SkillBlock key={i.title} {...i} />
 					))}
@@ -147,8 +147,8 @@ function AboutMe() {
 			<hr className="border-white/30" />
 			<section className="flex flex-col gap-18">
 				<SectionHeader>Dyplomas</SectionHeader>
-				<div className="grid grid-cols-2 gap-10 *:gap-10">
-					<div className="flex flex-col items-end">
+				<div className="grid grid-cols-2 gap-10 *:gap-10 max-lg:grid-cols-1">
+					<div className="flex flex-col items-end max-lg:items-center">
 						<Card
 							onClick={() =>
 								openDialog(
@@ -189,7 +189,7 @@ function AboutMe() {
 							<img src={Dyploma3} alt="dyploma3" />
 						</Card>
 					</div>
-					<div className="flex flex-col items-start">
+					<div className="flex flex-col items-start max-lg:items-center">
 						<Card
 							onClick={() =>
 								openDialog(
