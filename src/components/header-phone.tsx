@@ -12,6 +12,7 @@ import {
 	DrawerContent,
 	DrawerTrigger,
 } from "./ui/drawer";
+import { ThemeSwitcher } from './reusable/theme-switcher'
 
 type HeaderPhoneProps = {};
 
@@ -56,6 +57,7 @@ export const HeaderPhone: React.FC<HeaderPhoneProps> = ({ ...props }) => {
 							/>
 						</nav>
 						<nav className="flex flex-col gap-2 *:flex *:items-center *:text-2xl *:font-medium *:gap-1 w-fit mt-auto">
+							<ThemeSwitcher />
 							<Link
 								target="_blank"
 								to={linkedInUrl}
