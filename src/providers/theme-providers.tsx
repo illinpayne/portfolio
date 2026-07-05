@@ -22,19 +22,17 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "light",
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
-  // 1. SSR CHECK: Only read from localStorage if we are in the browser
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
       return (localStorage.getItem(storageKey) as Theme) || defaultTheme
     }
-    return defaultTheme // Fallback for the server render
+    return defaultTheme
   })
 
-  // useEffect only runs on the client, so accessing window here is already safe
   useEffect(() => {
     const root = window.document.documentElement
 
@@ -56,7 +54,6 @@ export function ThemeProvider({
   const value = {
     theme,
     setTheme: (theme: Theme) => {
-      // 2. SSR CHECK: Only write to localStorage if we are in the browser
       if (typeof window !== "undefined") {
         localStorage.setItem(storageKey, theme)
       }
