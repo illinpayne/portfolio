@@ -84,7 +84,7 @@ export default function WorkCard({
 				<div className="absolute top-0 left-0 bg-light dark:bg-dark-300 size-full rounded-[36px] -z-10"></div>
 				<MoveUpRight
 					className="
-                  absolute right-6 top-6 size-9 text-white/70
+                  absolute right-6 top-6 size-9 text-dark dark:text-white/70
                   transition-all duration-300 ease-out
                   group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-(--accent)"
 					strokeWidth={1.75}
