@@ -55,14 +55,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
+			<ThemeProvider defaultTheme="system" storageKey="my-app-theme">
 				<body className="relative overflow-x-hidden bg-light [&.dark]:bg-dark">
-					<ThemeProvider defaultTheme="system" storageKey="my-app-theme">
-						<div className="bg-light text-dark dark:text-light dark:bg-dark">
-							{children}
-						</div>
-					</ThemeProvider>
+					<div className="bg-light text-dark dark:text-light dark:bg-dark">
+						{children}
+					</div>
 					<Scripts />
 				</body>
+			</ThemeProvider>
 		</html>
 	);
 }
