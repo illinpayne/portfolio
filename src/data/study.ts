@@ -10,7 +10,7 @@ export const studies: ExperienceProps[] = [
 	{
 		company: 'Profi Center',
 		title: 'English B1+',
-		workTime: "8/'22 - 03/'25",
+		workTime: "08/'22 - 03/'25",
 		description: "Learned english language from A1 to B1+, I communicate with foreigners everyday!"
 	},
 	{
