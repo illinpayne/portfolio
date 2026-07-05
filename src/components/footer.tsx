@@ -6,10 +6,11 @@ import {
 	resumeUrl,
 	telegramUrl,
 } from "@/data/contacts";
+import { ThemeSwitcher } from './reusable/theme-switcher'
 export default function Footer() {
 	return (
 		<footer
-			className="border-t border-t-neutral-800 h-fit flex justify-center py-24 max-md:px-5 max-2xl:px-10"
+			className="border-t border-t-dark/10 dark:border-t-neutral-800 h-fit flex justify-center py-24 max-md:px-5 max-2xl:px-10"
 			id="#contacts"
 		>
 			<div className="grid grid-cols-2 gap-10 w-full max-w-340 max-sm:grid-cols-1 mx-auto">
@@ -57,6 +58,7 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className="flex flex-col items-end justify-end gap-2 max-sm:items-start">
+					<ThemeSwitcher />
 					<p className="text-semibold text-2xl">Thanks for stopping by!</p>
 					<p className="text-6xl">❤️</p>
 				</div>

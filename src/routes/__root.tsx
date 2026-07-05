@@ -1,10 +1,9 @@
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import Lenis from "lenis";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
 import appCss from "../styles.css?url";
 import "lenis/dist/lenis.css";
 import { useEffect } from "react";
+import { ThemeProvider } from '@/providers/theme-providers'
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -55,15 +54,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<HeadContent />
-				<title>Stas.T Software Engineer</title>
 			</head>
-			<body className="bg-dark text-light relative overflow-x-hidden dark">
-				{/* <Header />
-				<main className="min-h-screen">{children}</main>
-				<Footer /> */}
-				{children}
-				<Scripts />
-			</body>
+				<body className="relative overflow-x-hidden bg-light [&.dark]:bg-dark">
+					<ThemeProvider defaultTheme="system" storageKey="my-app-theme">
+						<div className="bg-light text-dark dark:text-light dark:bg-dark">
+							{children}
+						</div>
+					</ThemeProvider>
+					<Scripts />
+				</body>
 		</html>
 	);
 }

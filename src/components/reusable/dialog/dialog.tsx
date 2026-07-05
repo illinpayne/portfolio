@@ -10,7 +10,11 @@ export default function ZoomDialog() {
 
 	return (
 		<Dialog open={isOpen} onOpenChange={closeDialog}>
-			<DialogContent className='w-fit p-0 border-0 outline-0 ring-0 bg-transparent' showCloseButton={false}>
+			<DialogContent
+				className="w-max h-screen max-2xl:h-screen p-0 border-0 outline-0 ring-0 bg-transparent"
+				showCloseButton={false}
+				onClick={() => closeDialog()}
+			>
 				{children}
 			</DialogContent>
 		</Dialog>

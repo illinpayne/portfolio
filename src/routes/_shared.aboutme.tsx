@@ -21,13 +21,18 @@ import { useDialogStore } from "@/hooks/use-dialog.hook";
 
 export const Route = createFileRoute("/_shared/aboutme")({
 	component: AboutMe,
+	head: () => ({
+		meta: [
+			{ title: "About me" },
+	],
+  })
 });
 
 function AboutMe() {
 	const { openDialog } = useDialogStore();
 	return (
 		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24 max-sm:pt-0 max-md:px-5 max-2xl:px-10 max-lg:gap-16">
-			<div className="absolute -top-6 left-0 w-screen h-screen bg-radial from-emerald-300 brightness-25 blur-3xl via-dark to-white/0"></div>
+			<div className="absolute -top-6 left-0 w-screen h-screen bg-radial from-emerald-600/30 dark:brightness-25 blur-3xl via-light dark:via-dark to-white/0"></div>
 			<div className="h-[80vh] flex flex-col justify-center gap-30 z-10">
 				<div className="flex flex-col items-center *:text-center">
 					<div className="flex">
@@ -57,7 +62,7 @@ function AboutMe() {
 						<h1 className="font-moz">Wanna know more</h1>
 						<h1 className="h-24">
 							about{" "}
-							<span className="font-cycle bg-clip-text text-transparent bg-linear-to-r from-white to-slate-400">
+							<span className="font-cycle bg-clip-text text-transparent bg-linear-to-r from-dark dark:from-white to-emerald-400 dark:to-slate-400">
 								me?
 							</span>
 						</h1>
@@ -91,15 +96,15 @@ function AboutMe() {
 					engineering solutions.
 				</p>
 				<br />
-				<div className="rounded-[48px] bg-dark-300 relative grid grid-cols-3 py-10 px-20 gap-10 border-x border-b border-x-white/10 border-b-white/10 shadow-2xl shadow-white/5 max-sm:grid-cols-1 max-xl:grid-cols-2 max-lg:px-8">
-					<div className="h-px w-1/2 absolute top-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-dark via-cyan-300/80 to-dark"></div>
+				<div className="rounded-[48px] bg-dark/5 dark:bg-dark-300 relative grid grid-cols-3 py-10 px-20 gap-10 border-x border-b border-x-dark/10 dark:border-x-white/10 border-b-dark/10 dark:border-b-white/10 shadow-2xl shadow-dark/10 dark:shadow-white/5 max-sm:grid-cols-1 max-xl:grid-cols-2 max-lg:px-8">
+					<div className="h-px w-1/2 absolute top-0 left-1/2 -translate-x-1/2 bg-linear-to-r from-light dark:from-dark via-blue-500 dark:via-cyan-300/80 to-light dark:to-dark"></div>
 					<div className="col-span-2 max-xl:col-span-1">
 						<h1 className="font-semibold text-4xl">Resume</h1>
 						<p className="text-dark-200 text-xl mt-2 max-lg:text-start">
-							Review my CV or download it to save.
+							Review my CV or download to check later.
 						</p>
 					</div>
-					<div className="flex items-center justify-end gap-1">
+					<div className="flex items-center justify-end gap-1 text-white dark:text-dark">
 						<Link
 							to={resumeUrl}
 							target="_blank"
@@ -155,7 +160,7 @@ function AboutMe() {
 									<img
 										src={Dyploma1}
 										alt="dyploma1"
-										className="w-200 h-full object-contain"
+										className="w-auto h-screen object-contain"
 									/>,
 								)
 							}
@@ -168,7 +173,7 @@ function AboutMe() {
 									<img
 										src={Dyploma5}
 										alt="dyploma5"
-										className="w-130 h-full object-contain"
+										className="w-auto h-screen object-contain"
 									/>,
 								)
 							}
@@ -181,7 +186,7 @@ function AboutMe() {
 									<img
 										src={Dyploma3}
 										alt="dyploma3"
-										className="w-130 h-full object-contain"
+										className="w-auto h-screen object-contain"
 									/>,
 								)
 							}
@@ -196,7 +201,7 @@ function AboutMe() {
 									<img
 										src={Dyploma2}
 										alt="dyploma2"
-										className="w-130 h-full object-contain"
+										className="w-auto h-screen object-cover"
 									/>,
 								)
 							}
@@ -209,7 +214,7 @@ function AboutMe() {
 									<img
 										src={Dyploma6}
 										alt="dyploma6"
-										className="w-160 h-full object-contain"
+										className="w-auto h-screen object-contain"
 									/>,
 								)
 							}
@@ -222,7 +227,7 @@ function AboutMe() {
 									<img
 										src={Dyploma4}
 										alt="dyploma4"
-										className="w-130 h-full object-contain"
+										className="w-auto h-screen object-contain"
 									/>,
 								)
 							}
