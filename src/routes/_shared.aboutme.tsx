@@ -5,6 +5,11 @@ import Dyploma3 from "@/assets/dyplomas/d3.webp";
 import Dyploma4 from "@/assets/dyplomas/d4.webp";
 import Dyploma5 from "@/assets/dyplomas/d5.webp";
 import Dyploma6 from "@/assets/dyplomas/d6.webp";
+import DyplomaRshu1 from "@/assets/dyplomas/rshu1.webp";
+import DyplomaRshu2 from "@/assets/dyplomas/rshu2.webp";
+import DyplomaRshu3 from "@/assets/dyplomas/rshu3.webp";
+import DyplomaRshu4 from "@/assets/dyplomas/rshu4.webp";
+import DyplomaRshu5 from "@/assets/dyplomas/rshu5.webp";
 import Me1 from "@/assets/me/me1.webp";
 import Me2 from "@/assets/me/me2.webp";
 import Me3 from "@/assets/me/me3.webp";
@@ -152,7 +157,7 @@ function AboutMe() {
 			<hr className="border-white/30" />
 			<section className="flex flex-col gap-18">
 				<SectionHeader>Dyplomas</SectionHeader>
-				<div className="grid grid-cols-2 gap-10 *:gap-10 max-lg:grid-cols-1">
+				<div className="grid grid-cols-2 gap-10 *:gap-10 max-lg:flex max-lg:flex-col">
 					<div className="flex flex-col items-end max-lg:items-center">
 						<Card
 							onClick={() =>
@@ -192,6 +197,32 @@ function AboutMe() {
 							}
 						>
 							<img src={Dyploma3} alt="dyploma3" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={DyplomaRshu2}
+										alt="dyplomaRshu2"
+										className="w-auto h-screen object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={DyplomaRshu2} alt="dyplomaRshu2" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={DyplomaRshu4}
+										alt="dyplomaRshu4"
+										className="w-auto h-screen object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={DyplomaRshu4} alt="dyplomaRshu4" />
 						</Card>
 					</div>
 					<div className="flex flex-col items-start max-lg:items-center">
@@ -233,6 +264,48 @@ function AboutMe() {
 							}
 						>
 							<img src={Dyploma4} alt="dyploma4" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={DyplomaRshu3}
+										alt="dyplomaRshu3"
+										className="w-auto h-screen object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={DyplomaRshu3} alt="dyplomaRshu3" />
+						</Card>
+						<Card
+							onClick={() =>
+								openDialog(
+									<img
+										src={DyplomaRshu1}
+										alt="dyplomaRshu1"
+										className="w-auto h-screen object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={DyplomaRshu1} alt="dyplomaRshu1" />
+						</Card>
+					</div>
+					<div className='col-span-2 flex items-start justify-center'>
+						<Card
+							outerClassName='-rotate-90 -translate-y-1/7'
+							onClick={() =>
+								openDialog(
+									<img
+										src={DyplomaRshu5}
+										alt="dyplomaRshu5"
+										className="w-auto h-screen object-contain"
+									/>,
+								)
+							}
+						>
+							<img src={DyplomaRshu5} alt="dyplomaRshu5" />
 						</Card>
 					</div>
 				</div>
