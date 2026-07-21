@@ -36,7 +36,7 @@ export const Route = createFileRoute("/_shared/aboutme")({
 function AboutMe() {
 	const { openDialog } = useDialogStore();
 	return (
-		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24 max-sm:pt-0 max-md:px-5 max-2xl:px-10 max-lg:gap-16">
+		<div className="max-w-350 mx-auto pt-0 pb-20 flex flex-col gap-24 max-sm:pt-0 max-md:px-5 max-2xl:px-10 max-lg:gap-16 overflow-x-hidden">
 			<div className="absolute -top-6 left-0 w-screen h-screen bg-radial from-emerald-600/30 dark:brightness-25 blur-3xl via-light dark:via-dark to-white/0"></div>
 			<div className="h-[80vh] flex flex-col justify-center gap-30 z-10">
 				<div className="flex flex-col items-center *:text-center">
@@ -294,7 +294,7 @@ function AboutMe() {
 					</div>
 					<div className='col-span-2 flex items-start justify-center'>
 						<Card
-							outerClassName='-rotate-90 -translate-y-1/7'
+					
 							onClick={() =>
 								openDialog(
 									<img
